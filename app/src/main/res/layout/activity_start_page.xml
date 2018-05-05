@@ -5,36 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D4F3FF"
-    tools:context=".MainActivity">
-
+    tools:context=".StartPage">
 
     <Button
         android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="208dp"
+        android:background="#76B252"
         android:text="Admit Patient"
-
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:background="#FF6365"
         android:text="Discharge Patient"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/admitswipe" />
-
-    <Button
-        android:id="@+id/admitswipe"
-        android:layout_width="113dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="50dp"
-        android:text="Admit swipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />

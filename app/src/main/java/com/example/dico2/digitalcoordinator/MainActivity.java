@@ -14,8 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView header = findViewById(R.id.headerTextview);
-        header.setText("Digital Coordinator");
 
         Button swipeactivity = findViewById(R.id.admitswipe);
         swipeactivity.setOnClickListener(new View.OnClickListener() {
