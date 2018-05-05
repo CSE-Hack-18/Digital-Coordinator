@@ -6,7 +6,7 @@ public class Data {
     private Data single_instance = null;
 
     private ArrayList<Unit> units = new ArrayList<>();
-    private ArrayList<Human> humans = new ArrayList<>();
+    private ArrayList<Patient> patients = new ArrayList<>();
 
     private Data() {
     }
