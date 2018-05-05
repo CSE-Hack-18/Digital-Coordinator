@@ -57,4 +57,5 @@ public class Patient {
     public ArrayList<Diagnos> getDiagnosis() {
         return diagnosis;
     }
+
 }
