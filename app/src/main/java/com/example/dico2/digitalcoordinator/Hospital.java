@@ -29,12 +29,10 @@ public class Hospital{
         return suggested;
     }
 
-    private void filterUnits(ArrayList<Unit> suggested, ArrayList<Diagnos> diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
+    private void filterUnits(ArrayList<Unit> suggested, Diagnos diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
         for(int i = 0; i < suggested.size(); i++){
-            for (int j = 0; j < diagnosis.size(); j++) {
-                if(suggested.get(i).getType().equals(Unit.properties.CONTAGIOUS) && diagnosis.get(j).getDiagnos().equals("AIDS")){
+                if(suggested.get(i).getType().equals(diagnosis.getRestrictedTo())){
                     suggested.remove(i);
-                }
                 //ADD MORE FILTERS
             }
         }
@@ -48,9 +46,8 @@ public class Hospital{
         if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
             return;
         }
-        if(patient.getUnitNeeded().equals(unit.getType())){ //If same unitType as patient add it first
+        if(patient.getDiagnosis().getRecommended().equals(unit.getType())){ //If same unitType as patient add it first
             suggested.add(0, unit);
-            return;
         }else {
             suggested.add(unit);
         }
