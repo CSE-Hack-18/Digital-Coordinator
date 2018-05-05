@@ -32,9 +32,10 @@ public class Hospital{
     private void filterUnits(ArrayList<Unit> suggested, ArrayList<Diagnos> diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
         for(int i = 0; i < suggested.size(); i++){
             for (int j = 0; j < diagnosis.size(); j++) {
-                if(suggested.get(i).getUnit().equals("Quarantine Zone") && diagnosis.get(j).getDiagnos().equals("AIDS")){
+                if(suggested.get(i).getType().equals(Unit.properties.CONTAGIOUS) && diagnosis.get(j).getDiagnos().equals("AIDS")){
                     suggested.remove(i);
                 }
+                //ADD MORE FILTERS
             }
         }
     }
