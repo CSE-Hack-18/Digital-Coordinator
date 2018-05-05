@@ -29,6 +29,6 @@ public class Data {
     }
 
     public void loadTestData(){
-
+        patients.add(new Patient(1, "Jimmy Lundqvist", 0, "Surgery",null));
     }
 }
