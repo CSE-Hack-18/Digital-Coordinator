@@ -9,12 +9,6 @@ public class Patient {
     private String unitNeeded; // Where to optimal place the patient
     private ArrayList<Diagnos> diagnosis; // A persons diagnoses
 
-    public Patient(Human human) {
-        this.ssn = human.getSsn();
-        this.name = human.getName();
-        this.specialNeeds = human.getSpecialNeeds();
-    }
-
     public Patient(int ssn, String patientName, int specialNeeds, String unitNeeded, ArrayList<Diagnos> diagnosis) {
         // initialise instance variables
         this.ssn = ssn;
