@@ -9,4 +9,5 @@ public class Unit {
     private int capacity;
     private String location;
     private String type;
+    
 }
