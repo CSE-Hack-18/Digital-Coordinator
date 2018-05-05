@@ -46,7 +46,7 @@ public class Patient {
         return patientName;
     }
 
-    public double getPersonnelUnits() {
+    public int getPersonnelUnits() {
         return personnelUnits;
     }
 
