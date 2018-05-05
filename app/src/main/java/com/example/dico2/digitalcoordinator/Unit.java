@@ -1,19 +1,12 @@
 package com.example.dico2.digitalcoordinator;
 
+import java.util.ArrayList;
+
 public class Unit {
-    public enum Discipline {
-        KIRURGI, ORTOPEDI, MEDICIN, GERIATRIK, UROLOGI
-    }
-    int currentWorkload;
-    int capacity;
-    Discipline discipline;
-    int availableBeds;
-
-
-    public Unit(int currentWorkload, int capacity, Discipline discipline, int availableBeds){
-        this.discipline = discipline;
-        this.currentWorkload = currentWorkload;
-        this.capacity = capacity;
-        this.availableBeds = availableBeds;
-    }
+    private String unit;
+    private ArrayList<Patient> patients;
+    private ArrayList<Staff> employees;
+    private int capacity;
+    private String location;
+    private String type;
 }
