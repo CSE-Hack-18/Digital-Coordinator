@@ -15,7 +15,7 @@ public class Hospital{
     public void init(){
         //new Unit()
     }
-
+    
 
     public ArrayList<Unit> suggestedUnits(Patient patient){
         Collections.sort(units); //sort units
@@ -25,12 +25,19 @@ public class Hospital{
                 addUnitIfAvailable(currentunit, patient, suggested);
             }
         //filter suggested
-        filterUnits(patient.getDiagnosis());
+        filterUnits(suggested, patient.getDiagnosis());
         return suggested;
     }
 
-    private void filterUnits(ArrayList<Diagnos> diagnos){
-        //if(diagnos)
+    private void filterUnits(ArrayList<Unit> suggested, ArrayList<Diagnos> diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
+        for(int i = 0; i < suggested.size(); i++){
+            for (int j = 0; j < diagnosis.size(); j++) {
+                if(suggested.get(i).getType().equals(Unit.properties.CONTAGIOUS) && diagnosis.get(j).getDiagnos().equals("AIDS")){
+                    suggested.remove(i);
+                }
+                //ADD MORE FILTERS
+            }
+        }
     }
 
     private void addUnitIfAvailable(Unit unit, Patient patient, ArrayList<Unit> suggested){

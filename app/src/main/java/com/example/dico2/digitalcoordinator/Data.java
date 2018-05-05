@@ -18,4 +18,17 @@ public class Data {
         }
         return single_instance;
     }
+
+    public void initUnits(){
+        units.add(new Unit("Surgery", 20, "Building 1, Floor 1"));
+        units.add(new Unit("Medicine", 50, "Building 2, Floor 2"));
+        units.add(new Unit("Orthopedics", 50, "Building 1, Floor 2"));
+        units.add(new Unit("Geriatrics", 50, "Building 2, Floor 3"));
+        units.add(new Unit("Urology", 50, "Building 2, Floor 1"));
+        units.add(new Unit("Quarantine", 10, "Building X, Floor -7", Unit.properties.CONTAGIOUS));
+    }
+
+    public void loadTestData(){
+
+    }
 }
