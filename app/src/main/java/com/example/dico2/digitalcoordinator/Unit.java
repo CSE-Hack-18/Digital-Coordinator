@@ -10,13 +10,24 @@ public class Unit implements Comparable<Unit>{
     private ArrayList<Staff> employees;
     private int capacity;
     private String location;
-    private String type;
+    private Enum type;
 
-    public Unit(String unit, int capacity, String location, String type) {
+    public Unit(String unit, int capacity, String location, Enum<properties> type) {
         this.unit = unit;
         this.capacity = capacity;
         this.location = location;
         this.type = type;
+    }
+
+    public Unit(String unit, int capacity, String location) {
+        this.unit = unit;
+        this.capacity = capacity;
+        this.location = location;
+        this.type = properties.NONE;
+    }
+
+    public enum properties{
+        NONE, CONTAGIOUS
     }
 
     public int comparableWorkLoad(){
@@ -64,7 +75,7 @@ public class Unit implements Comparable<Unit>{
         return location;
     }
 
-    public String getType() {
+    public Enum getType() {
         return type;
     }
 }
