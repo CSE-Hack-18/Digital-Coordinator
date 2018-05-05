@@ -5,30 +5,24 @@ import java.util.*;
 public class Patient {
     private int ssn; // Personnummer, this has a lot of personal information
     private String name; // Patients' name
-    private int specialNeeds; // Number of personnel units needed for the patient. 0 = no help needed
-    private String unitNeeded; // Where to optimal place the patient
-    private ArrayList<Diagnos> diagnosis; // A persons diagnoses
+    private int burden; // Number of personnel units needed for the patient. 0 = no help needed
+    private Diagnos diagnosis; // A persons diagnoses
 
-    public Patient(int ssn, String patientName, int specialNeeds, String unitNeeded, ArrayList<Diagnos> diagnosis) {
+    public Patient(int ssn, String patientName, int burden, Diagnos diagnosis) {
         // initialise instance variables
         this.ssn = ssn;
         this.name = patientName;
-        this.specialNeeds = specialNeeds;
-        this.unitNeeded = unitNeeded;
+        this.burden = burden;
         this.diagnosis = diagnosis;
     }
 
     // if diagnosis removed/added and we need to update the care needed
-    public void setSpecialNeeds(int specialNeeds) {
-        this.specialNeeds = specialNeeds;
+    public void setburden(int burden) {
+        this.burden = burden;
     }
 
-    public void addDiagnosis(Diagnos diagnos) {
-        diagnosis.add(diagnos);
-    }
-
-    public void removeDiagnosis(Diagnos diagnos) {
-        diagnosis.remove(diagnos);
+    public void setDiagnosis(Diagnos diagnos) {
+        this.diagnosis = diagnos;
     }
 
     public int getSsn() {
@@ -39,15 +33,11 @@ public class Patient {
         return name;
     }
 
-    public double getSpecialNeeds() {
-        return specialNeeds;
+    public double getburden() {
+        return burden;
     }
 
-    public String getUnitNeeded() {
-        return unitNeeded;
-    }
-
-    public ArrayList<Diagnos> getDiagnosis() {
+    public Diagnos getDiagnosis() {
         return diagnosis;
     }
 

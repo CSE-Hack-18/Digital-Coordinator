@@ -29,6 +29,6 @@ public class Data {
     }
 
     public void loadTestData(){
-        patients.add(new Patient(1, "Jimmy Lundqvist", 0, "Surgery",null));
+        patients.add(new Patient(1, "Jimmy Lundqvist", 0,new Diagnos("FUCKINGDYING","Surgery", Unit.properties.CONTAGIOUS)));
     }
 }

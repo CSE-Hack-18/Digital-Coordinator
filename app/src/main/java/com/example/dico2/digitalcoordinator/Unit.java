@@ -38,7 +38,7 @@ public class Unit implements Comparable<Unit>{
         ArrayList<Patient> patients = unit.getPatients();
         int count = 0;
         for(int i = 0; i < patients.size(); i++ ){
-            count += patients.get(i).getSpecialNeeds();
+            count += patients.get(i).getburden();
         }
         return count;
     }
