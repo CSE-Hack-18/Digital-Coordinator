@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".StartPage"></activity>
+        <activity android:name=".AdmitSwipe"></activity>
     </application>
 
 </manifest>
