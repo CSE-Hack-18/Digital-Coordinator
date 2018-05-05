@@ -4,6 +4,10 @@ public class Staff {
     private int ssn;
     private String name;
     private String title;
-    private int type;
 
+    public Staff(int ssn, String name, String title) {
+        this.ssn = ssn;
+        this.name = name;
+        this.title = title;
+    }
 }
