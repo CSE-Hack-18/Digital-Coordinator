@@ -32,7 +32,11 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
+        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
         mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+
+
+
         mPager.setAdapter(mPagerAdapter);
     }
 
@@ -59,7 +63,7 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return new Fragment();
+            return new ScreenSlidePageFragment();
         }
 
         @Override

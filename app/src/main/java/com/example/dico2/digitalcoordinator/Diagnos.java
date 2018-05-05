@@ -3,6 +3,8 @@ package com.example.dico2.digitalcoordinator;
 import java.util.ArrayList;
 
 public class Diagnos {
+
+
     private String diagnos;
     private int burdening;
     private ArrayList<Unit> restrictedTo;
@@ -14,5 +16,8 @@ public class Diagnos {
 
     public void addRestriction(Unit unit){
         restrictedTo.add(unit);
+    }
+    public String getDiagnos() {
+        return diagnos;
     }
 }
