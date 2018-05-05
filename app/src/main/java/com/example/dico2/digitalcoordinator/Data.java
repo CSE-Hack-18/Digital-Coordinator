@@ -7,6 +7,7 @@ public class Data {
 
     private ArrayList<Unit> units = new ArrayList<>();
     private ArrayList<Patient> patients = new ArrayList<>();
+    private Hospital hospital = new Hospital();
 
     private Data() {
     }
