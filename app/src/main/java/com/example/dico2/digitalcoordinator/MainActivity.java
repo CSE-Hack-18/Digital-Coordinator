@@ -23,5 +23,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button admit = findViewById(R.id.admit_page);
+        admit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,StartPage.class);
+                startActivity(intent);
+            }
+        });
     }
 }
