@@ -54,9 +54,12 @@ public class Hospital{
         if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
             return;
         }
-        if(patient.getDiagnosis().getRecommended().equals(unit.getType())){ //If same unitType as patient add it first
+        if(patient.getDiagnosis().getRecommended().equals(unit.getUnit())){ //If same unitType as patient add it first
             suggested.add(0, unit);
+            System.out.println("WASSUP");
         }else {
+            System.out.println("WASSUP");
+
             suggested.add(unit);
         }
     }

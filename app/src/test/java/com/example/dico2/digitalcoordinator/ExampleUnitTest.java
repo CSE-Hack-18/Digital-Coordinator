@@ -28,7 +28,14 @@ public class ExampleUnitTest {
         for(int i = 0; i < result.size(); i++){
             System.out.println(result.get(i).getUnit());
         }
-        System.out.println(Arrays.toString(result.toArray()));
+
+        hospital.getUnits().get(0).setPatients(data.getPatients());
+        result = hospital.suggestedUnits(data.getPatients().get(6));
+
+        System.out.println("\n" + data.getPatients().get(0).getName());
+        for(int i = 0; i < result.size(); i++){
+            System.out.println(result.get(i).getUnit());
+        }
         assertEquals(4, 2 + 2);
     }
 }
