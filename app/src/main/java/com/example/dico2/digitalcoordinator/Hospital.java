@@ -55,9 +55,8 @@ public class Hospital{
             return;
         }
         if(patient.getDiagnosis().getRecommended().equals(unit.getUnit())){ //If same unitType as patient add it first
-            suggested.add(unit);
+            suggested.add(0, unit);
         }else {
-
             suggested.add(unit);
         }
     }

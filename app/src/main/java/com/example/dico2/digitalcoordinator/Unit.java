@@ -42,6 +42,9 @@ public class Unit implements Comparable<Unit>{
 
     public double comparableWorkLoad(){
         //return employees.size()- countPersonnelneeded(this);
+        if(employees.size() == 0){
+            return countPersonnelneeded(this);
+        }
         return countPersonnelneeded(this) / employees.size() * 1.0;
     }
 

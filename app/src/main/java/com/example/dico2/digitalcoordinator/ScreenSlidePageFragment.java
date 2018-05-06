@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -44,7 +45,7 @@ public class ScreenSlidePageFragment extends Fragment {
 
         if(unit.comparableWorkLoad() < 2){
             imageLoad.setImageResource(R.drawable.load1);
-        } else if(unit.comparableWorkLoad() <= 4){
+        } else if(unit.comparableWorkLoad() <= 3){
             imageLoad.setImageResource(R.drawable.load2);
         } else {
             imageLoad.setImageResource(R.drawable.load3);
@@ -64,6 +65,7 @@ public class ScreenSlidePageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 unit.getPatients().add(patient);
+                Toast.makeText(getContext(),patient.getName() + " added to " + unit.getUnit(), Toast.LENGTH_LONG).show();
                 getActivity().finish();
             }
         });

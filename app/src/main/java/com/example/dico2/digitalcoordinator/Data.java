@@ -83,7 +83,7 @@ public class Data {
         units.add(new Unit("Medicine", 5, "Building 2, Floor 2",R.drawable.flower));
         units.add(new Unit("Orthopedics", 5, "Building 1, Floor 2", R.drawable.skeleton));
         units.add(new Unit("Geriatrics", 3, "Building 2, Floor 3", R.drawable.geriatrics));
-        units.add(new Unit("Urology", 3, "Building 2, Floor 1", R.drawable.urology));
+        units.add(new Unit("Urology", 4, "Building 2, Floor 1", R.drawable.urology));
         units.add(new Unit("Quarantine", 3, "Building X, Floor -7", Unit.properties.CONTAGIOUS, R.drawable.zombie));
         initStaffMembers();
 
@@ -95,8 +95,8 @@ public class Data {
         patients.add(new Patient(2, "Jimmy Lundq", 1, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
         patients.add(new Patient(3, "Jimmy Lund", 1, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
         patients.add(new Patient(4, "Jimmy Lundqvi", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(5, "Jimmy Lun", 5,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(6, "Jimmy Lu", 3, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(5, "Jimmy Lun", 1,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(6, "Jimmy Lu", 2, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(7, "Jimmy ", 1, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(8, "Jimmy", 4, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(9, "Jimm", 1, new Diagnos("Heart Disease","Medicine", Unit.properties.NONE)));
@@ -107,7 +107,7 @@ public class Data {
         units.get(1).getPatients().add(patients.get(2));
         units.get(2).getPatients().add(patients.get(3));
         units.get(3).getPatients().add(patients.get(4));
-        units.get(3).getPatients().add(patients.get(5));
+        units.get(4).getPatients().add(patients.get(5));
         units.get(4).getPatients().add(patients.get(6));
         units.get(4).getPatients().add(patients.get(7));
 
