@@ -31,7 +31,7 @@ public class Data {
 
         return null;
     }
-    
+
     public ArrayList<Unit> getUnits() {
         return units;
     }

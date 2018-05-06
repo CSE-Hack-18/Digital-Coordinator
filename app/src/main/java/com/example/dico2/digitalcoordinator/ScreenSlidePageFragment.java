@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 public class ScreenSlidePageFragment extends Fragment {
     public final static String ARG_OBJECT = "object";
     public final static String PATIENT_OBJECT = "patientssn";
@@ -23,7 +25,12 @@ public class ScreenSlidePageFragment extends Fragment {
         int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
-        data.getPatient()
+        Patient patient = data.getPatient(args.getInt(PATIENT_OBJECT));
+        ArrayList<Unit> units = data.getHospital().suggestedUnits(patient);
+
+        for (Unit unit:units){
+
+        }
 
         if (page == 1){
             imageView.setImageResource(R.drawable.zombie);

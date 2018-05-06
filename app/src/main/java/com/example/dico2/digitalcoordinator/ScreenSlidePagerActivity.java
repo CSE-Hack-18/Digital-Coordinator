@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 public class ScreenSlidePagerActivity extends FragmentActivity {
     /**
@@ -31,10 +32,13 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_slide);
 
-        // Instantiate a ViewPager and a PagerAdapter.
+        Intent testargs = getIntent();
+        int ssn = testargs.getIntExtra(ScreenSlidePageFragment.PATIENT_OBJECT, 0);
+
+                // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), ssn);
 
 
 
@@ -58,16 +62,21 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
      * sequence.
      */
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
+        private int ssn;
+        public ScreenSlidePagerAdapter(FragmentManager fm, int ssn) {
             super(fm);
+            this.ssn = ssn;
         }
 
         @Override
         public Fragment getItem(int position) {
             Fragment fragment = new ScreenSlidePageFragment();
             Bundle args = new Bundle();
-            // Our object is just an integer :-P
+
+
+
             args.putInt(ScreenSlidePageFragment.ARG_OBJECT, position + 1);
+            args.putInt(ScreenSlidePageFragment.PATIENT_OBJECT, this.ssn);
             fragment.setArguments(args);
 
             return fragment;
@@ -75,7 +84,10 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            Patient patient = Data.getInstance().getPatient(this.ssn);
+            int size = Data.getInstance().getHospital().suggestedUnits(patient).size();
+            Log.d("test", String.valueOf(size) + " - id: " + String.valueOf(size));
+            return size;
         }
     }
 }
