@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         swipeactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AdmitSwipe.class);
+                Intent intent = new Intent(MainActivity.this,ScreenSlidePagerActivity.class);
                 startActivity(intent);
             }
         });

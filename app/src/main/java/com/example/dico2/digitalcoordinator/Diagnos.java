@@ -4,15 +4,34 @@ import java.util.ArrayList;
 
 public class Diagnos {
     private String diagnos;
-    private int burdening;
-    private ArrayList<Unit> restrictedTo;
+    private String recommended;
+    private Unit.properties restrictedTo;
 
-    public Diagnos(String diagnos, int burdening) {
-        this.diagnos = diagnos;
-        this.burdening = burdening;
+    public Unit.properties getRestrictedTo() {
+        return restrictedTo;
     }
 
-    public void addRestriction(Unit unit){
-        restrictedTo.add(unit);
+    public Diagnos(String diagnos, String recommended, Unit.properties restrictedTo) {
+        this.diagnos = diagnos;
+        this.recommended = recommended;
+    }
+
+    public void setRestrictedTo(Unit.properties restrictedTo) {
+        this.restrictedTo = restrictedTo;
+    }
+
+    public void setRestriction(Unit.properties restriction){
+        restrictedTo = restriction;
+    }
+
+    public String getRecommended() {
+        return recommended;
+    }
+
+    public void setRecommended(String recommended) {
+        this.recommended = recommended;
+    }
+    public String getDiagnos() {
+        return diagnos;
     }
 }
