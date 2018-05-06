@@ -42,5 +42,20 @@
         app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        android:layout_marginTop="148dp"
+        android:contentDescription="zombie"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/zombie" />
+
 
 </android.support.constraint.ConstraintLayout>
