@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -22,29 +25,33 @@ public class ScreenSlidePageFragment extends Fragment {
                     R.layout.fragment_screen_slide_page, container, false);
         Bundle args = getArguments();
         ImageView imageView = rootView.findViewById(R.id.imageView2);
+        ImageView imageLoad = rootView.findViewById(R.id.imageloadview);
+        TextView textView = rootView.findViewById(R.id.textView);
+        TextView capText = rootView.findViewById(R.id.captext);
         int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
         Patient patient = data.getPatient(args.getInt(PATIENT_OBJECT));
         ArrayList<Unit> units = data.getHospital().suggestedUnits(patient);
+        Unit unit = units.get(page - 1);
 
-        for (Unit unit:units){
+        String cap = "Capacity: " + unit.getPatients().size() + " / " + unit.getCapacity();
+        capText.setText(cap);
 
+        imageView.setImageResource(unit.getImage());
+        String head = unit.getUnit();
+        textView.setText(head);
+
+        System.out.println("workload: " + unit.comparableWorkLoad());
+        if(unit.comparableWorkLoad() < 2){
+            imageLoad.setImageResource(R.drawable.load1);
+        } else if(unit.comparableWorkLoad() <= 4){
+            imageLoad.setImageResource(R.drawable.load2);
+        } else {
+            imageLoad.setImageResource(R.drawable.load3);
         }
 
-        if (page == 1){
-            imageView.setImageResource(R.drawable.zombie);
-        } else if(page == 2){
-            imageView.setImageResource(R.drawable.flower);
-        } else if(page == 3){
-            imageView.setImageResource(R.drawable.heartbeat);
-        } else if(page == 4){
-            imageView.setImageResource(R.drawable.skeleton);
-        } else if(page == 5){
-            imageView.setImageResource(R.drawable.skeleton);
-        } else if(page == 6){
-            imageView.setImageResource(R.drawable.skeleton);
-        }
+
 
 
 
