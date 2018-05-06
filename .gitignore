@@ -318,3 +318,5 @@ gradle-app.setting
 # End of https://www.gitignore.io/api/gradle
 
 # End of https://www.gitignore.io/api/java,macos,linux,android,windows,intellij,androidstudio
+
+.vscode
