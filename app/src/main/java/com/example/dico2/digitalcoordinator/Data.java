@@ -63,12 +63,12 @@ public class Data {
 
 
     public void initUnits(){
-        units.add(new Unit("Surgery", 5, "Building 1, Floor 1"));
-        units.add(new Unit("Medicine", 5, "Building 2, Floor 2"));
-        units.add(new Unit("Orthopedics", 5, "Building 1, Floor 2"));
-        units.add(new Unit("Geriatrics", 3, "Building 2, Floor 3"));
-        units.add(new Unit("Urology", 3, "Building 2, Floor 1"));
-        units.add(new Unit("Quarantine", 3, "Building X, Floor -7", Unit.properties.CONTAGIOUS));
+        units.add(new Unit("Surgery", 5, "Building 1, Floor 1", R.drawable.flower));
+        units.add(new Unit("Medicine", 5, "Building 2, Floor 2",R.drawable.heartbeat));
+        units.add(new Unit("Orthopedics", 5, "Building 1, Floor 2", R.drawable.skeleton));
+        units.add(new Unit("Geriatrics", 3, "Building 2, Floor 3", R.drawable.zombie));
+        units.add(new Unit("Urology", 3, "Building 2, Floor 1", R.drawable.flower));
+        units.add(new Unit("Quarantine", 3, "Building X, Floor -7", Unit.properties.CONTAGIOUS, R.drawable.flower));
         initStaffMembers();
 
     }

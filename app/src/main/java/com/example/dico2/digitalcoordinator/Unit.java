@@ -11,24 +11,29 @@ public class Unit implements Comparable<Unit>{
     private int capacity;
     private String location;
     private Enum type;
+    private int image;
 
-    public Unit(String unit, int capacity, String location, Enum<properties> type) {
+    public Unit(String unit, int capacity, String location, Enum<properties> type, int img) {
         this.unit = unit;
         this.capacity = capacity;
         this.location = location;
         this.type = type;
         this.employees = new ArrayList<Staff>(0);
         this.patients = new ArrayList<Patient>(0);
+        this.image = img;
     }
 
-    public Unit(String unit, int capacity, String location) {
+    public Unit(String unit, int capacity, String location, int img) {
         this.unit = unit;
         this.capacity = capacity;
         this.location = location;
         this.type = properties.NONE;
         this.employees = new ArrayList<Staff>(0);
         this.patients = new ArrayList<Patient>(0);
+        this.image = img;
     }
+
+
 
     public enum properties{
 
@@ -87,5 +92,9 @@ public class Unit implements Comparable<Unit>{
 
     public Enum getType() {
         return type;
+    }
+
+    public int getImage(){
+        return this.image;
     }
 }
