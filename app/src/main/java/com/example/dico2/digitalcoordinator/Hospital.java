@@ -42,11 +42,8 @@ public class Hospital{
     }
 
     private void addUnitIfAvailable(Unit unit, Patient patient, ArrayList<Unit> suggested){
-        System.out.println(unit.getPatients().size());
 
         if (!(unit.getCapacity() > unit.getPatients().size())){//If no free beds return
-            System.out.println("SFSD");
-            System.out.println(unit.getUnit());
             return;
         }
         if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
@@ -54,9 +51,7 @@ public class Hospital{
         }
         if(patient.getDiagnosis().getRecommended().equals(unit.getUnit())){ //If same unitType as patient add it first
             suggested.add(unit);
-            System.out.println("WASSUP");
         }else {
-            System.out.println("WASSUP");
 
             suggested.add(unit);
         }
