@@ -56,6 +56,7 @@ public class DischargeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 int ssndis = data.getAllPatientsAdmitted().get(page-1).getSsn();
+                Toast.makeText(getContext(),data.getPatient(ssndis).getName() + " discharged.", Toast.LENGTH_LONG).show();
                 data.dischargePatient(ssndis);
                 getActivity().finish();
             }
