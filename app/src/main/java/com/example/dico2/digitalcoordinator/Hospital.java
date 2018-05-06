@@ -31,7 +31,7 @@ public class Hospital{
 
     private void filterUnits(ArrayList<Unit> suggested, Diagnos diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
         for(int i = 0; i < suggested.size(); i++){
-                if(suggested.get(i).getType().equals(diagnosis.getRestrictedTo())){
+                if(!suggested.get(i).getType().equals(diagnosis.getRestrictedTo())){
                     suggested.remove(i);
                 //ADD MORE FILTERS
             }

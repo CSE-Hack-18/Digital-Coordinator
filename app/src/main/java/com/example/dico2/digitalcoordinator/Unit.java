@@ -17,6 +17,7 @@ public class Unit implements Comparable<Unit>{
         this.capacity = capacity;
         this.location = location;
         this.type = type;
+        this.employees = new ArrayList<Staff>(0);
     }
 
     public Unit(String unit, int capacity, String location) {
@@ -24,9 +25,11 @@ public class Unit implements Comparable<Unit>{
         this.capacity = capacity;
         this.location = location;
         this.type = properties.NONE;
+        this.employees = new ArrayList<Staff>(0);
     }
 
     public enum properties{
+
         NONE, CONTAGIOUS
     }
 
@@ -54,11 +57,15 @@ public class Unit implements Comparable<Unit>{
             return 0;
         }
     }
-
+    public void setEmployees(ArrayList<Staff> employees) {
+        this.employees = employees;
+    }
     public String getUnit() {
         return unit;
     }
-
+    public void setPatients(ArrayList<Patient> patients) {
+        this.patients = patients;
+    }
     public ArrayList<Patient> getPatients() {
         return patients;
     }
