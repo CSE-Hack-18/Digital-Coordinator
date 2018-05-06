@@ -46,7 +46,12 @@ public class Hospital{
         if (!(unit.getCapacity() > unit.getPatients().size())){//If no free beds return
             return;
         }
-        if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
+      /*  if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
+            return;
+        }*/
+
+        if(unit.comparableWorkLoad()  >= 5){//If Unit workload is too high return
+            System.out.println(unit.comparableWorkLoad());
             return;
         }
         if(patient.getDiagnosis().getRecommended().equals(unit.getUnit())){ //If same unitType as patient add it first
