@@ -34,12 +34,11 @@
             android:id="@+id/txt_ssn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="yymmdd-xxxx"
             android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btn_fetch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -99,7 +98,7 @@
     <Button
         android:id="@+id/btn_search"
         android:layout_width="472dp"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#76B252"
@@ -133,7 +132,6 @@
             android:id="@+id/txt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First and last name"
             android:inputType="text" />
     </android.support.design.widget.TextInputLayout>
 

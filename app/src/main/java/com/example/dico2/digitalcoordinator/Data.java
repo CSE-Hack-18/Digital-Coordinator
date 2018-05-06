@@ -11,7 +11,10 @@ public class Data {
     private ArrayList<Patient> patients = new ArrayList<>();
     private Hospital hospital = new Hospital();
 
+    private ArrayList<Diagnos> diagnosis = new ArrayList<>();
+
     private Data() {
+        initDiags();
         initUnits();
         loadTestData();
         hospital.setUnits(this.units);
@@ -32,6 +35,10 @@ public class Data {
         }
 
         return null;
+    }
+
+    public ArrayList<Diagnos> getDiagnosis() {
+        return diagnosis;
     }
 
     public ArrayList<Unit> getUnits() {
@@ -60,6 +67,15 @@ public class Data {
 
 
 
+    public void initDiags()
+    {
+        diagnosis.add(new Diagnos("Infection", "Medicine", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Stroke", "Surgery", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Heart Attack", "Surgery", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Kidney Stones", "Urology", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Back Pain", "Orthopedics", Unit.properties.NONE));
+
+    }
 
 
     public void initUnits(){
@@ -74,16 +90,16 @@ public class Data {
     }
 
     public void loadTestData(){
-        patients.add(new Patient(0, "Jim", 0, new Diagnos("Kidney Stone","Urology", Unit.properties.NONE)));
+        patients.add(new Patient(0, "Jim", 1, new Diagnos("Kidney Stone","Urology", Unit.properties.NONE)));
         patients.add(new Patient(1, "Jimmy Lundqvis", 5, new Diagnos("Old and Senile","Geriatrics", Unit.properties.NONE)));
-        patients.add(new Patient(2, "Jimmy Lundq", 0, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
-        patients.add(new Patient(3, "Jimmy Lund", 0, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
+        patients.add(new Patient(2, "Jimmy Lundq", 1, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
+        patients.add(new Patient(3, "Jimmy Lund", 1, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
         patients.add(new Patient(4, "Jimmy Lundqvi", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(5, "Jimmy Lun", 5,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(6, "Jimmy Lu", 3, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(7, "Jimmy ", 0, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(7, "Jimmy ", 1, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(8, "Jimmy", 4, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(9, "Jimm", 0, new Diagnos("Heart Disease","Medicine", Unit.properties.NONE)));
+        patients.add(new Patient(9, "Jimm", 1, new Diagnos("Heart Disease","Medicine", Unit.properties.NONE)));
     }
 
     private void initStaffMembers(){
