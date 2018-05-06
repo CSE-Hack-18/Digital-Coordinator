@@ -9,6 +9,14 @@ import java.util.Comparator;
  */
 
 public class Hospital{
+    public ArrayList<Unit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(ArrayList<Unit> units) {
+        this.units = units;
+    }
+
     private ArrayList<Unit> units= new ArrayList<Unit>(5);
 
 
@@ -31,7 +39,7 @@ public class Hospital{
 
     private void filterUnits(ArrayList<Unit> suggested, Diagnos diagnosis){ //SUGGESTION OF HOW THE FILTERING SHOULD WORK
         for(int i = 0; i < suggested.size(); i++){
-                if(!suggested.get(i).getType().equals(diagnosis.getRestrictedTo())){
+                if(suggested.get(i).getType().equals(diagnosis.getRestrictedTo())){
                     suggested.remove(i);
                 //ADD MORE FILTERS
             }

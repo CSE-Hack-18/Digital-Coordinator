@@ -18,6 +18,7 @@ public class Unit implements Comparable<Unit>{
         this.location = location;
         this.type = type;
         this.employees = new ArrayList<Staff>(0);
+        this.patients = new ArrayList<Patient>(0);
     }
 
     public Unit(String unit, int capacity, String location) {
@@ -26,6 +27,7 @@ public class Unit implements Comparable<Unit>{
         this.location = location;
         this.type = properties.NONE;
         this.employees = new ArrayList<Staff>(0);
+        this.patients = new ArrayList<Patient>(0);
     }
 
     public enum properties{
@@ -50,9 +52,9 @@ public class Unit implements Comparable<Unit>{
     @Override
     public int compareTo(@NonNull Unit unit) {
         if(this.comparableWorkLoad() > unit.comparableWorkLoad()){
-            return 1;
-        }else if(this.comparableWorkLoad() < unit.comparableWorkLoad()) {
             return -1;
+        }else if(this.comparableWorkLoad() < unit.comparableWorkLoad()) {
+            return 1;
         }else{
             return 0;
         }
