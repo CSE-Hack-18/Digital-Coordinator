@@ -9,10 +9,12 @@ public class Data {
 
     private ArrayList<Unit> units = new ArrayList<>();
     private ArrayList<Patient> patients = new ArrayList<>();
+    private Hospital hospital = new Hospital();
 
     private Data() {
         initUnits();
         loadTestData();
+        hospital.setUnits(this.units);
     }
 
     public static Data getInstance(){
@@ -56,7 +58,7 @@ public class Data {
         this.hospital = hospital;
     }
 
-    private Hospital hospital = new Hospital();
+
 
 
 

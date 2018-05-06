@@ -86,7 +86,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         public int getCount() {
             Patient patient = Data.getInstance().getPatient(this.ssn);
             int size = Data.getInstance().getHospital().suggestedUnits(patient).size();
-            Log.d("test", String.valueOf(size) + " - id: " + String.valueOf(size));
             return size;
         }
     }
