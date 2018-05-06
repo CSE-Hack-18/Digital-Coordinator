@@ -28,12 +28,12 @@ public class ScreenSlidePageFragment extends Fragment {
         ImageView imageLoad = rootView.findViewById(R.id.imageloadview);
         TextView textView = rootView.findViewById(R.id.textView);
         TextView capText = rootView.findViewById(R.id.captext);
-        int page = args.getInt(ARG_OBJECT);
+        final int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
-        Patient patient = data.getPatient(args.getInt(PATIENT_OBJECT));
+        final Patient patient = data.getPatient(args.getInt(PATIENT_OBJECT));
         ArrayList<Unit> units = data.getHospital().suggestedUnits(patient);
-        Unit unit = units.get(page - 1);
+        final Unit unit = units.get(page - 1);
 
         String cap = "Capacity: " + unit.getPatients().size() + " / " + unit.getCapacity();
         capText.setText(cap);
@@ -42,7 +42,6 @@ public class ScreenSlidePageFragment extends Fragment {
         String head = unit.getUnit();
         textView.setText(head);
 
-        System.out.println("workload: " + unit.comparableWorkLoad());
         if(unit.comparableWorkLoad() < 2){
             imageLoad.setImageResource(R.drawable.load1);
         } else if(unit.comparableWorkLoad() <= 4){
@@ -50,6 +49,24 @@ public class ScreenSlidePageFragment extends Fragment {
         } else {
             imageLoad.setImageResource(R.drawable.load3);
         }
+
+        Button cancel = rootView.findViewById(R.id.cancelbutton);
+        Button admit = rootView.findViewById(R.id.admitbutton);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+
+        admit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unit.getPatients().add(patient);
+                getActivity().finish();
+            }
+        });
 
 
 
