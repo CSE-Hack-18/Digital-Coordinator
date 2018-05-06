@@ -67,16 +67,16 @@ public class Data {
     }
 
     public void loadTestData(){
+        patients.add(new Patient(0, "Jim", 0, new Diagnos("Kidney Stone","Urology", Unit.properties.NONE)));
         patients.add(new Patient(1, "Jimmy Lundqvis", 5, new Diagnos("Old and Senile","Geriatrics", Unit.properties.NONE)));
-        patients.add(new Patient(2, "Jimmy Lundqvi", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(3, "Jimmy Lundq", 0, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
-        patients.add(new Patient(4, "Jimmy Lund", 0, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
+        patients.add(new Patient(2, "Jimmy Lundq", 0, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
+        patients.add(new Patient(3, "Jimmy Lund", 0, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
+        patients.add(new Patient(4, "Jimmy Lundqvi", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(5, "Jimmy Lun", 5,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(6, "Jimmy Lu", 3, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(7, "Jimmy ", 0, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(8, "Jimmy", 4, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
         patients.add(new Patient(9, "Jimm", 0, new Diagnos("Heart Disease","Medicine", Unit.properties.NONE)));
-        patients.add(new Patient(10, "Jim", 0, new Diagnos("Kidney Stone","Urology", Unit.properties.NONE)));
     }
 
     private void initStaffMembers(){
