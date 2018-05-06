@@ -40,8 +40,9 @@ public class Unit implements Comparable<Unit>{
         NONE, CONTAGIOUS
     }
 
-    public int comparableWorkLoad(){
-        return employees.size()- countPersonnelneeded(this);
+    public double comparableWorkLoad(){
+        //return employees.size()- countPersonnelneeded(this);
+        return countPersonnelneeded(this) / employees.size() * 1.0;
     }
 
     public int countPersonnelneeded(Unit unit){ //returns the value of all patients needs
@@ -54,12 +55,13 @@ public class Unit implements Comparable<Unit>{
     }
 
 
+
     @Override
     public int compareTo(@NonNull Unit unit) {
         if(this.comparableWorkLoad() > unit.comparableWorkLoad()){
-            return -1;
-        }else if(this.comparableWorkLoad() < unit.comparableWorkLoad()) {
             return 1;
+        }else if(this.comparableWorkLoad() < unit.comparableWorkLoad()) {
+            return -1;
         }else if(this.comparableWorkLoad() == unit.comparableWorkLoad()){
             return 0;
         }

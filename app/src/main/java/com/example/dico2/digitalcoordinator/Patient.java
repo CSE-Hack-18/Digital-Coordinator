@@ -33,7 +33,7 @@ public class Patient {
         return name;
     }
 
-    public double getburden() {
+    public int getburden() {
         return burden;
     }
 
