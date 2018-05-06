@@ -1,6 +1,7 @@
 package com.example.dico2.digitalcoordinator;
 
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,7 +57,6 @@ public class Unit implements Comparable<Unit>{
         }
         return count;
     }
-
 
 
     @Override

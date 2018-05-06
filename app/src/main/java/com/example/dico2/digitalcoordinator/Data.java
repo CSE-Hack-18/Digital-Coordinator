@@ -1,5 +1,7 @@
 package com.example.dico2.digitalcoordinator;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 import dalvik.annotation.TestTarget;
@@ -25,6 +27,50 @@ public class Data {
             single_instance = new Data();
         }
         return single_instance;
+    }
+
+    public ArrayList<Patient> getAllPatientsAdmitted(){
+        ArrayList<Patient> allPatients = new ArrayList<>();
+        for(Unit unit:this.hospital.getUnits()){
+            for (Patient patient:unit.getPatients()){
+                allPatients.add(patient);
+            }
+        }
+        return allPatients;
+    }
+
+    public String getPatientUnit(int ssn){
+        for(Unit unit:this.hospital.getUnits()){
+
+            for(Patient patient:unit.getPatients()){
+                if(patient.getSsn() == ssn){
+                    return unit.getUnit();
+                }
+            }
+        }
+
+        return "None";
+    }
+
+    public int dischargePatient(int ssn){
+        for(Unit unit:this.hospital.getUnits()){
+            int index = 0;
+            boolean found = false;
+
+            for(Patient patient:unit.getPatients()){
+                if(patient.getSsn() == ssn){
+                    found = true;
+                    break;
+                }
+                index++;
+            }
+            if(found){
+                unit.getPatients().remove(index);
+                return 1;
+            }
+        }
+
+        return 0;
     }
 
     public Patient getPatient(int ssn){

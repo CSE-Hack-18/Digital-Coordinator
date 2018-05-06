@@ -20,6 +20,7 @@
         <activity android:name=".AdmitPage"></activity>
         <activity android:name=".AdmitSwipe"></activity>
         <activity android:name=".ScreenSlidePagerActivity"></activity>
+        <activity android:name=".DischargeActivity"></activity>
     </application>
 
 </manifest>

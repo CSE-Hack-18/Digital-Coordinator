@@ -20,5 +20,16 @@ public class StartPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button dischargeActivity = findViewById(R.id.button2);
+        dischargeActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartPage.this,DischargeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
