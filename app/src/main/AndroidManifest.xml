@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".AdmitPage"></activity>
         <activity android:name=".StartPage"></activity>
         <activity android:name=".AdmitSwipe"></activity>
-        <activity android:name=".ScreenSlidePagerActivity"></activity>
         <activity android:name=".ScreenSlidePagerActivity"></activity>
     </application>
 
