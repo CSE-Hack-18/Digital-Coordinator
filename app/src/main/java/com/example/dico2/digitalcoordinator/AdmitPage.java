@@ -1,5 +1,6 @@
 package com.example.dico2.digitalcoordinator;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -148,10 +149,20 @@ public class AdmitPage extends AppCompatActivity {
 
                 Intent intent = new Intent(AdmitPage.this, ScreenSlidePagerActivity.class);
                 intent.putExtra(ScreenSlidePageFragment.PATIENT_OBJECT,Integer.parseInt(ssnInput.getText().toString()));
-                startActivity(intent);
+                startActivityForResult(intent,1);
             }
         });
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                finish();
+            }
+        }
     }
 
     public void ShowDiagnoses()

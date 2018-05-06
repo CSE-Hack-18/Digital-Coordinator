@@ -1,5 +1,6 @@
 package com.example.dico2.digitalcoordinator;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -57,6 +58,8 @@ public class ScreenSlidePageFragment extends Fragment {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent returnIntent = new Intent();
+                getActivity().setResult(getActivity().RESULT_CANCELED, returnIntent);
                 getActivity().finish();
             }
         });
@@ -66,6 +69,9 @@ public class ScreenSlidePageFragment extends Fragment {
             public void onClick(View v) {
                 unit.getPatients().add(patient);
                 Toast.makeText(getContext(),patient.getName() + " added to " + unit.getUnit(), Toast.LENGTH_LONG).show();
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("result",1);
+                getActivity().setResult(getActivity().RESULT_OK,returnIntent);
                 getActivity().finish();
             }
         });
