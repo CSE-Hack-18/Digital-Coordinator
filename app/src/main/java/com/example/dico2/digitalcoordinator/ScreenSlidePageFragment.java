@@ -25,7 +25,9 @@ public class ScreenSlidePageFragment extends Fragment {
                     R.layout.fragment_screen_slide_page, container, false);
         Bundle args = getArguments();
         ImageView imageView = rootView.findViewById(R.id.imageView2);
+        ImageView imageLoad = rootView.findViewById(R.id.imageloadview);
         TextView textView = rootView.findViewById(R.id.textView);
+        TextView capText = rootView.findViewById(R.id.captext);
         int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
@@ -33,10 +35,21 @@ public class ScreenSlidePageFragment extends Fragment {
         ArrayList<Unit> units = data.getHospital().suggestedUnits(patient);
         Unit unit = units.get(page - 1);
 
+        String cap = "Capacity: " + unit.getPatients().size() + " / " + unit.getCapacity();
+        capText.setText(cap);
 
         imageView.setImageResource(unit.getImage());
-        String head = "Unit: " + unit.getUnit() + " Cap: " + unit.getCapacity() + " work: " + unit.comparableWorkLoad();
+        String head = unit.getUnit();
         textView.setText(head);
+
+        System.out.println("workload: " + unit.comparableWorkLoad());
+        if(unit.comparableWorkLoad() < 2){
+            imageLoad.setImageResource(R.drawable.load1);
+        } else if(unit.comparableWorkLoad() <= 4){
+            imageLoad.setImageResource(R.drawable.load2);
+        } else {
+            imageLoad.setImageResource(R.drawable.load3);
+        }
 
 
 
