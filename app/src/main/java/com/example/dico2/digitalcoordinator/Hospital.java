@@ -9,6 +9,14 @@ import java.util.Comparator;
  */
 
 public class Hospital{
+    public ArrayList<Unit> getUnits() {
+        return units;
+    }
+
+    public void setUnits(ArrayList<Unit> units) {
+        this.units = units;
+    }
+
     private ArrayList<Unit> units= new ArrayList<Unit>(5);
 
 
