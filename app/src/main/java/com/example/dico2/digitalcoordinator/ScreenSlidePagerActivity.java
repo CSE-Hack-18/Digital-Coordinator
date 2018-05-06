@@ -1,5 +1,6 @@
 package com.example.dico2.digitalcoordinator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -64,7 +65,6 @@ public class ScreenSlidePagerActivity extends FragmentActivity {
         @Override
         public Fragment getItem(int position) {
             Fragment fragment = new ScreenSlidePageFragment();
-
             Bundle args = new Bundle();
             // Our object is just an integer :-P
             args.putInt(ScreenSlidePageFragment.ARG_OBJECT, position + 1);

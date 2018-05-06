@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 public class ScreenSlidePageFragment extends Fragment {
     public final static String ARG_OBJECT = "object";
+    public final static String PATIENT_OBJECT = "patientssn";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,6 +23,7 @@ public class ScreenSlidePageFragment extends Fragment {
         int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
+        data.getPatient()
 
         if (page == 1){
             imageView.setImageResource(R.drawable.zombie);
