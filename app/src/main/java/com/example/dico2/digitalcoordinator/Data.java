@@ -74,6 +74,8 @@ public class Data {
         diagnosis.add(new Diagnos("Heart Attack", "Surgery", Unit.properties.NONE));
         diagnosis.add(new Diagnos("Kidney Stones", "Urology", Unit.properties.NONE));
         diagnosis.add(new Diagnos("Back Pain", "Orthopedics", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Alzheimers", "Geriatrics", Unit.properties.NONE));
+        diagnosis.add(new Diagnos("Swine Flu", "Quarantine", Unit.properties.NONE));
 
     }
 
@@ -90,16 +92,16 @@ public class Data {
     }
 
     public void loadTestData(){
-        patients.add(new Patient(0, "Jim", 1, new Diagnos("Kidney Stone","Urology", Unit.properties.NONE)));
-        patients.add(new Patient(1, "Jimmy Lundqvis", 5, new Diagnos("Old and Senile","Geriatrics", Unit.properties.NONE)));
-        patients.add(new Patient(2, "Jimmy Lundq", 1, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
-        patients.add(new Patient(3, "Jimmy Lund", 1, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
-        patients.add(new Patient(4, "Jimmy Lundqvi", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(5, "Jimmy Lun", 1,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(6, "Jimmy Lu", 2, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(7, "Jimmy ", 1, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(8, "Jimmy", 4, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
-        patients.add(new Patient(9, "Jimm", 1, new Diagnos("Heart Disease","Medicine", Unit.properties.NONE)));
+        patients.add(new Patient(0, "Anders Haviland", 1, new Diagnos("Kidney Stones","Urology", Unit.properties.NONE)));
+        patients.add(new Patient(1, "Adam Adamsson", 5, new Diagnos("Alzheimers","Geriatrics", Unit.properties.NONE)));
+        patients.add(new Patient(2, "Erik Eriksson", 1, new Diagnos("Back Pain","Ortophedics", Unit.properties.NONE)));
+        patients.add(new Patient(3, "Sara Astromoff", 1, new Diagnos("Swine Flu","Quarantine", Unit.properties.CONTAGIOUS)));
+        patients.add(new Patient(4, "Jimmy Johnsson", 1, new Diagnos("Stroke","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(5, "Anna Aronsson", 1,new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(6, "Ana Bove", 2, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(7, "Ulf Erlander ", 1, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(8, "Tor Odensson", 4, new Diagnos("Heart Attack","Surgery", Unit.properties.NONE)));
+        patients.add(new Patient(9, "GIMLI SON OF GLÓIN", 1, new Diagnos("Infection","Medicine", Unit.properties.NONE)));
 
 
         units.get(0).getPatients().add(patients.get(0));
