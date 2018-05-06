@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class AdmitPage extends AppCompatActivity {
@@ -47,7 +48,34 @@ public class AdmitPage extends AppCompatActivity {
             }
         });
 
+        SeekBar seekBar = findViewById(R.id.bar_burden);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                TextView brden = findViewById(R.id.txt_burden);
+                brden.setText("" + (progress + 1));
+            }
 
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Write code to perform some action when touch is started.
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Write code to perform some action when touch is stopped.
+            }
+        });
+
+
+        Button search = findViewById(R.id.btn_search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Intent intent = new Intent(AdmitPage.this, ScreenSlidePageActivity.class);
+                //intent.putExtra();
+            }
+        });
 
     }
 
@@ -55,7 +83,7 @@ public class AdmitPage extends AppCompatActivity {
     {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick a disease");
+        builder.setTitle("Diagnosis");
         builder.setItems(diags, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
