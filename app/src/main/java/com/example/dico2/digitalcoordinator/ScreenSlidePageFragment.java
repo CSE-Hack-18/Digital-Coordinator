@@ -23,7 +23,7 @@ public class ScreenSlidePageFragment extends Fragment {
         int page = args.getInt(ARG_OBJECT);
 
         Data data = Data.getInstance();
-        data.getPatient()
+       // data.getPatient();
 
         if (page == 1){
             imageView.setImageResource(R.drawable.zombie);

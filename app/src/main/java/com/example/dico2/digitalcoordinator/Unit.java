@@ -36,7 +36,7 @@ public class Unit implements Comparable<Unit>{
     }
 
     public int comparableWorkLoad(){
-        return countPersonnelneeded(this) - employees.size() * 15;
+        return employees.size()- countPersonnelneeded(this);
     }
 
     public int countPersonnelneeded(Unit unit){ //returns the value of all patients needs
@@ -55,9 +55,10 @@ public class Unit implements Comparable<Unit>{
             return -1;
         }else if(this.comparableWorkLoad() < unit.comparableWorkLoad()) {
             return 1;
-        }else{
+        }else if(this.comparableWorkLoad() == unit.comparableWorkLoad()){
             return 0;
         }
+        return 3;
     }
     public void setEmployees(ArrayList<Staff> employees) {
         this.employees = employees;

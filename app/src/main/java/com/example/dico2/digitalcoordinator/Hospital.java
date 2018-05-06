@@ -18,11 +18,6 @@ public class Hospital{
     }
 
     private ArrayList<Unit> units= new ArrayList<Unit>(5);
-
-
-    public void init(){
-        //new Unit()
-    }
     
 
     public ArrayList<Unit> suggestedUnits(Patient patient){
@@ -47,15 +42,18 @@ public class Hospital{
     }
 
     private void addUnitIfAvailable(Unit unit, Patient patient, ArrayList<Unit> suggested){
+        System.out.println(unit.getPatients().size());
 
         if (!(unit.getCapacity() > unit.getPatients().size())){//If no free beds return
+            System.out.println("SFSD");
+            System.out.println(unit.getUnit());
             return;
         }
         if(unit.countPersonnelneeded(unit) >= unit.getEmployees().size()){//If Unit workload is too high return
             return;
         }
         if(patient.getDiagnosis().getRecommended().equals(unit.getUnit())){ //If same unitType as patient add it first
-            suggested.add(0, unit);
+            suggested.add(unit);
             System.out.println("WASSUP");
         }else {
             System.out.println("WASSUP");
