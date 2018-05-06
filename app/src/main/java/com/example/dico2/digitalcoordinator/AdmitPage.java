@@ -6,11 +6,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -68,12 +70,17 @@ public class AdmitPage extends AppCompatActivity {
         });
 
 
+
         Button search = findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(AdmitPage.this, ScreenSlidePageActivity.class);
-                //intent.putExtra();
+                EditText ssnInput = findViewById(R.id.txt_ssn);
+                EditText nameInput = findViewById(R.id.txt_name);
+
+                Intent intent = new Intent(AdmitPage.this, ScreenSlidePagerActivity.class);
+                intent.putExtra(ScreenSlidePageFragment.PATIENT_OBJECT,Integer.parseInt(ssnInput.getText().toString()));
+                startActivity(intent);
             }
         });
 
