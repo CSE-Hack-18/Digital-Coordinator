@@ -7,6 +7,16 @@
     android:background="#D4F3FF"
     tools:context=".AdmitPage">
 
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="fill_parent"
+        android:layout_height="62dp"
+        android:background="#76B252"
+        android:text="Search Units"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/txt_Diagnosis"
         android:layout_width="109dp"
@@ -94,18 +104,6 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_diag" />
-
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="472dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="#76B252"
-        android:text="Search Units"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_burden"

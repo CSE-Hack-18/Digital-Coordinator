@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#D4F3FF">
 
     <TextView
         android:id="@+id/textView"
@@ -25,40 +26,37 @@
 
     <Button
         android:id="@+id/admitbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="68dp"
+        android:layout_width="fill_parent"
+        android:layout_height="56dp"
+        android:background="#76B252"
         android:text="Admit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/cancelbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cancelbutton"
-        android:layout_width="92dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="60dp"
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:background="#FF6365"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/admitbutton"
-        app:layout_constraintHorizontal_bias="0.308"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="240dp"
-        android:layout_marginTop="148dp"
         android:contentDescription="zombie"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/admitbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.827"
+        app:layout_constraintTop_toBottomOf="@+id/captext"
         app:srcCompat="@drawable/zombie" />
 
     <ImageView
