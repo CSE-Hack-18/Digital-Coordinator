@@ -10,13 +10,28 @@ public class Data {
     private ArrayList<Unit> units = new ArrayList<>();
     private ArrayList<Patient> patients = new ArrayList<>();
 
-    public Data getSingle_instance() {
+    private Data() {
+        initUnits();
+        loadTestData();
+    }
+
+    public static Data getInstance(){
+        if(single_instance == null){
+            single_instance = new Data();
+        }
         return single_instance;
     }
 
+    public Patient getPatient(int ssn){
+        for(Patient patient:patients){
+            if(patient.getSsn() == ssn){
+                return patient;
+            }
+        }
 
-
-
+        return null;
+    }
+    
     public ArrayList<Unit> getUnits() {
         return units;
     }
@@ -43,17 +58,7 @@ public class Data {
 
     private Hospital hospital = new Hospital();
 
-    private Data() {
-        initUnits();
-        loadTestData();
-    }
 
-    public static Data getInstance(){
-        if(single_instance == null){
-            single_instance = new Data();
-        }
-        return single_instance;
-    }
 
     public void initUnits(){
         units.add(new Unit("Surgery", 5, "Building 1, Floor 1"));
